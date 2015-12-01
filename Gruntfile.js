@@ -21,28 +21,28 @@ module.exports = function (grunt) {
     // Project settings
     yeoman: {
       // configurable paths
-      app: require('./bower.json').appPath || 'app',
+      app: require('./bower.json').appPath || 'static',
       dist: 'dist'
     },
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+      /*js: {
+        files: ['<%= yeoman.app %>/scripts/{,*!/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: true
         }
       },
       jsTest: {
-        files: ['test/spec/{,*/}*.js'],
+        files: ['test/spec/{,*!/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
-      },
+      },*/
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
       },
-      gruntfile: {
+      /*gruntfile: {
         files: ['Gruntfile.js']
       },
       livereload: {
@@ -50,11 +50,11 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= yeoman.app %>/{,*/}*.html',
-          '.tmp/styles/{,*/}*.css',
-          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          '<%= yeoman.app %>/{,*!/}*.html',
+          '.tmp/styles/{,*!/}*.css',
+          '<%= yeoman.app %>/images/{,*!/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
-      }
+      }*/
     },
 
     // The actual grunt server settings
@@ -153,9 +153,9 @@ module.exports = function (grunt) {
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
-        sassDir: '<%= yeoman.app %>/styles',
-        cssDir: '.tmp/styles',
-        generatedImagesDir: '.tmp/images/generated',
+        sassDir: 'sass',
+        cssDir: '<%= yeoman.app %>/styles',
+        generatedImagesDir: '<%= yeoman.app %/images/generated',
         imagesDir: '<%= yeoman.app %>/images',
         javascriptsDir: '<%= yeoman.app %>/scripts',
         fontsDir: '<%= yeoman.app %>/styles/fonts',
@@ -403,4 +403,7 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask("watchsass", ["watch:compass"]);
+
 };
