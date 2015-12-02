@@ -1,91 +1,213 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
-@import 'sass-bootstrap/lib/bootstrap';
+@import "compass/reset";
+@import "compass/css3/box-shadow";
+@import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=Asap);
+//@import 'sass-bootstrap/lib/bootstrap';
 
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
+//colours
+$orange: #ff9900;
+$dark-orange: #cc7a00;
+$light-orange: #ffcc80;
+$light-white: #f2f2f2;
+$dark-grey: #1a1a1a;
+$mid-grey: #808080;
+$light-grey: #cccccc;
+$warning-red: #cc3300;
 
-/* Space out content a bit */
 body {
-    padding-top: 20px;
+
+  background-color: $light-white;
+  font-family: Helvetica, Arial, sans-serif;
+  color: $dark-grey;
+}
+
+nav {
+
+  padding: 5px 0px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 100%;
+  background-color: $orange;
+  border-right: 1px solid $dark-orange;
+
+  @include box-shadow(1px 0px 10px 2px $light-grey);
+
+  h1 {
+    font-family: 'Asap', sans-serif;
+    color: $light-white;
+    font-size: 2em;
+
+    img {
+
+      margin: 0px 5px;
+      display:inline-block;
+      width: 30px;
+    }
+  }
+
+  ul {
+
+    padding-top: 10px;
+
+    li {
+
+      padding: 5px;
+      border-top: 1px solid $orange;
+      background-color: $dark-orange;
+
+      &:last-child {
+        border-bottom: 1px solid $orange;
+      }
+
+      &:hover {
+
+        background-color: $orange;
+      }
+
+      a {
+
+        display: inline-block;
+        width: 100%;
+        color: $light-white;
+        font-size: 1.2em;
+        text-decoration: none;
+
+        &:hover {
+
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+form {
+
+  fieldset {
+
+    div {
+      padding-bottom: 5px;
+    }
+
+    label {
+
+      width: 100px;
+      display: inline-block;
+      color: $light-white;
+    }
+
+    input {
+
+      height: 24px;
+      background-color: $light-white;
+      border: 1px solid $dark-orange;
+      width: 250px;
+      display: inline-block;
+      font-size: 1em;
+      color: $dark-grey;
+      padding:3px;
+
+      @include border-radius(3px);
+
+      &[type='submit']{
+        width: auto;
+        height: 32px;
+        padding: 0px 10px;
+
+        &:hover {
+
+          cursor: pointer;
+          color: $light-white;
+          background-color: $dark-orange;
+        }
+      }
+    }
+  }
+
+  .warning {
+    color: $warning-red;
+  }
+}
+
+.loading {
+
+  position: absolute;
+  top:0px;
+  bottom:0px;
+  width: 100%;
+  z-index: 1000;
+  background-color: $light-white;
+
+  img {
+    display: block;
+    width: 106px;
+    height: 106px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2000;
+    margin: -50px 0px 0px -50px;
+  }
+}
+
+.login-form {
+
+  padding-top: 20px;
+
+  label {
+
+    width: 80px;
+  }
+
+  input[type="submit"]{
+
+    margin-left:84px;
+  }
+
+  .warning {
     padding-bottom: 20px;
+  }
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
-}
+.login-container {
 
-/* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
-}
+  .login-box {
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-}
+    @include box-sizing(border-box);
 
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-}
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    height: 300px;
+    margin: -250px 0px 0px -225px;
+    background-color: $orange;
+    padding: 10px;
+    border: 1px solid $dark-orange;
 
-.container-narrow > hr {
-    margin: 30px 0;
-}
+    @include box-shadow(1px 1px 10px 2px $light-grey);
 
-/* Main marketing message and sign up button */
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-}
+    h1 {
+      font-family: 'Asap', sans-serif;
+      color: $light-white;
+      font-size: 2em;
 
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
+      img {
 
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
-}
-
-.marketing p + h4 {
-    margin-top: 28px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
+        margin: 0px 5px;
+        display:inline-block;
+        width: 30px;
+      }
     }
-
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
+  }
 }
+
+.view {
+  margin-left: 300px;
+  padding: 20px;
+}
+

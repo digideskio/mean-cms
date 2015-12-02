@@ -28,6 +28,12 @@ module.exports = function(config){
       } else {
         return null
       }
+    },
+
+    getModelMetaData : function(){
+
+      return config.models;
+
     }
   }
 };
