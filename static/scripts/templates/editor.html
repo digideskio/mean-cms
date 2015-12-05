@@ -1,0 +1,20 @@
+<form class="editor-form">
+
+  <div class="field" ng-repeat="(key, value) in config">
+
+
+
+    <fieldset ng-if="value.type == 'text'">
+
+      <label for="{{$parent.key}}">{{$parent.value.label}}</label>
+      <input id="{{$parent.key}}" ng-model="values[$parent.key]" type="text">
+      <div class="warning" ng-show="isInvalid(key)">
+        {{getValidationMsg(key)}}
+      </div>
+    </fieldset>
+  </div>
+
+  <button type="button" ng-click="reset()">reset</button>
+  <input type="submit" value="save" ng-click="save()" />
+
+</form>

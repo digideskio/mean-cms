@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('meanCmsApp')
-  .factory('authorisation', function ($http) {
+  .factory('authorisation', function ($http, $q, $rootScope) {
+
+    var authPromise = $q.defer();
 
     return {
 
@@ -18,7 +20,19 @@ angular.module('meanCmsApp')
             username: username,
             password: password
           });
+      },
+
+      getAuthPromise : function(){
+
+        return authPromise.promise;
+      },
+
+      authCheckPromiseComplete : function(success){
+
+        authPromise.resolve(success);
+
       }
+
     }
   })
 ;

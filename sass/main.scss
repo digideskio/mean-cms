@@ -11,6 +11,7 @@ $orange: #ff9900;
 $dark-orange: #cc7a00;
 $light-orange: #ffcc80;
 $light-white: #f2f2f2;
+$very-light-white: #F5F5F5;
 $dark-grey: #1a1a1a;
 $mid-grey: #808080;
 $light-grey: #cccccc;
@@ -23,7 +24,7 @@ body {
   color: $dark-grey;
 }
 
-nav {
+nav.side-nav {
 
   padding: 5px 0px;
   position: fixed;
@@ -100,7 +101,7 @@ form {
       color: $light-white;
     }
 
-    input {
+    input, button {
 
       height: 24px;
       background-color: $light-white;
@@ -130,6 +131,43 @@ form {
 
   .warning {
     color: $warning-red;
+  }
+}
+
+.editor-form {
+
+  .field {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: $very-light-white;
+  }
+
+  .warning {
+    display: inline-block;
+    padding-left: 10px;
+  }
+
+  label {
+    color: $orange;
+  }
+
+  button, input[type="submit"]{
+
+    font-size: 1em;
+    height: 32px;
+    padding: 0px 10px;
+    color: $light-white;
+    background-color: $orange;
+    border: 1px solid $orange;
+
+    @include border-radius(3px);
+
+    &:hover {
+      cursor: pointer;
+      color: $light-white;
+      background-color: $dark-orange;
+      border-color: $dark-orange;
+    }
   }
 }
 
@@ -209,5 +247,32 @@ form {
 .view {
   margin-left: 300px;
   padding: 20px;
+}
+
+h1.control-header {
+
+  color: $orange;
+  font-family: 'Asap', sans-serif;
+  font-size: 1.4em;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $orange;
+}
+
+.button {
+
+  display: inline-block;
+  background-color: $orange;
+  color: $light-white;
+  height: 30px;
+  line-height:27px;
+  text-decoration: none;
+  padding: 0px 5px;
+  @include border-radius(3px);
+
+  &:hover {
+    text-decoration: none;
+    background-color: $dark-orange;
+  }
 }
 

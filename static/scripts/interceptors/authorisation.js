@@ -1,24 +1,22 @@
 "use strict";
 
 angular.module('meanCmsApp')
-  .factory('authorisationInt', function ($q) {
+  .factory('authorisationInt', function ($q, $rootScope) {
 
     return {
 
-
-      response : function(response){
-
-        console.log("interceptor response", response);
-
-        return response;
-      },
-
       responseError : function(response){
 
-        console.log("responseError", response);
+        console.log("response", response);
+
+        if (response.status === 401){
+          $rootScope.isAuthed = false;
+
+          console.log("got here");
+
+        }
 
         return response;
-
       }
     }
   });

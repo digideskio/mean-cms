@@ -7,8 +7,20 @@ module.exports = function(config){
 
   return {
 
-    loadModels : function(config){
+    getModel : function(modelName){
 
+      var modelSchema,
+        Model;
+
+      try {
+
+        modelSchema = require(config.models[modelName].schemaPath);
+
+        Model = mongoose.model(modelName, modelSchema);
+
+      } catch(e){}
+
+      return Model;
     },
 
     connect : function(){
@@ -19,15 +31,6 @@ module.exports = function(config){
     disconnect : function(){
 
       db.disconnect();
-    },
-
-    getModel : function(name){
-
-      if (models.hasOwnProperty(name)){
-        return models[name];
-      } else {
-        return null
-      }
     },
 
     getModelMetaData : function(){

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('meanCmsApp')
-  .factory('appCtrl', function ($resource) {
+  .factory('data', function ($resource) {
 
     return {
 
@@ -9,6 +9,12 @@ angular.module('meanCmsApp')
 
         var objectMetaData = $resource("api/objects");
         return objectMetaData;
+      },
+
+      getObject : function(objectName){
+
+        var object = $resource("api/objects/" + objectName);
+        return object;
       }
     }
   });

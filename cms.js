@@ -95,4 +95,53 @@ module.exports = function (express, app, config) {
 
     res.json(models);
   });
+
+
+  app.get(baseUrl + "/api/objects/:objectName", function (req, res) {
+
+    var objectName = req.params.objectName,
+      Model = dataAccessLayer.getModel(objectName);
+
+    if (typeof Model !== "undefined") {
+
+      dataAccessLayer.connect();
+
+      Model.find({}, function (err, objects) {
+
+        res.json(objects);
+
+        dataAccessLayer.disconnect();
+
+      });
+    } else {
+
+      res.status(500);
+
+      res.json({
+        success : false,
+        message : "There is no object with the name " + objectName
+      });
+    }
+
+  });
+
+  app.post(baseUrl + "/api/objects/:objectName", function(req, res){
+
+    var objectName = req.params.objectName,
+      Model = dataAccessLayer.getModel(objectName),
+      model = new Model(req.body);
+
+    dataAccessLayer.connect();
+
+    model.save(function(err){
+
+      res.json({
+        success : true,
+        message : "New model successfully created"
+      });
+
+      dataAccessLayer.disconnect();
+
+    });
+  });
 };

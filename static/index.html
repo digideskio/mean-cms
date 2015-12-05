@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title>Object editor</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -25,41 +25,18 @@
 <body ng-app="meanCmsApp" ng-controller="appCtrl">
 
 <div ng-if="isAuthed" ng-cloak>
-  <nav>
+  <nav class="side-nav">
     <h1>
       <img src="images/cms-icon.png"/>Editable objects:
     </h1>
 
     <ul>
-
-      <li>
-        <a href="/nolink">
-          news
+      <li ng-repeat="(key, value) in objectsMetaData">
+        <a ng-href="#/objects/{{key}}/list">
+          {{value.displayName | lowercase}}
         </a>
       </li>
-      <li>
-        <a href="/nolink">
-          events
-        </a>
-      </li>
-      <li>
-        <a href="/nolink">
-          activities
-        </a>
-      </li>
-      <li>
-        <a href="/nolink">
-          groups
-        </a>
-      </li>
-      <li>
-        <a href="/nolink">
-          downloads
-        </a>
-      </li>
-
     </ul>
-
   </nav>
 
   <!-- Add your site or application content here -->
@@ -137,8 +114,13 @@
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/app.js"></script>
 <script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/list.js"></script>
+<script src="scripts/controllers/create.js"></script>
 <script src="scripts/services/authorisation.js"></script>
 <script src="scripts/interceptors/authorisation.js"></script>
+<script src="scripts/services/data.js"></script>
+<script src="scripts/directives/createBtn.js"></script>
+<script src="scripts/directives/editor.js"></script>
 
 <!-- endbuild -->
 </body>
