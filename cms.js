@@ -89,6 +89,7 @@ module.exports = function (express, app, config) {
     }
   });
 
+  //get object meta data
   app.get(baseUrl + "/api/objects", function (req, res) {
 
     var models = dataAccessLayer.getModelMetaData();
@@ -96,7 +97,7 @@ module.exports = function (express, app, config) {
     res.json(models);
   });
 
-
+  //get all object of one type
   app.get(baseUrl + "/api/objects/:objectName", function (req, res) {
 
     var objectName = req.params.objectName,
@@ -118,14 +119,15 @@ module.exports = function (express, app, config) {
       res.status(500);
 
       res.json({
-        success : false,
-        message : "There is no object with the name " + objectName
+        success: false,
+        message: "There is no object with the name " + objectName
       });
     }
 
   });
 
-  app.post(baseUrl + "/api/objects/:objectName", function(req, res){
+  //add new object of given type
+  app.post(baseUrl + "/api/objects/:objectName", function (req, res) {
 
     var objectName = req.params.objectName,
       Model = dataAccessLayer.getModel(objectName),
@@ -133,11 +135,69 @@ module.exports = function (express, app, config) {
 
     dataAccessLayer.connect();
 
-    model.save(function(err){
+    model.save(function (err) {
 
       res.json({
-        success : true,
-        message : "New model successfully created"
+        success: true,
+        message: "New model successfully created"
+      });
+
+      dataAccessLayer.disconnect();
+
+    });
+  });
+
+  //delete object of given type and with id
+  app.delete(baseUrl + "/api/objects/:objectName/:id", function (req, res) {
+
+    var objectName = req.params.objectName,
+      id = req.params.id,
+      Model = dataAccessLayer.getModel(objectName);
+
+    dataAccessLayer.connect();
+
+    Model.find({"_id": id}).remove(function (err) {
+
+      dataAccessLayer.disconnect();
+
+      res.json({
+        success: true,
+        message: "Successfully removed object with id: " + id
+      });
+    });
+  });
+
+  //get object instance
+  app.get(baseUrl + "/api/objects/:objectName/:id", function (req, res) {
+
+    var objectName = req.params.objectName,
+      id = req.params.id,
+      Model = dataAccessLayer.getModel(objectName);
+
+    dataAccessLayer.connect();
+
+    Model.find({"_id": id}, function (err, object) {
+
+      res.json(object[0]);
+      dataAccessLayer.disconnect();
+    });
+  });
+
+  //update object instance
+  app.put(baseUrl + "/api/objects/:objectName/:id", function (req, res) {
+
+    var objectName = req.params.objectName,
+      id = req.params.id,
+      update = req.body,
+      Model = dataAccessLayer.getModel(objectName);
+
+    dataAccessLayer.connect();
+
+    Model.update({_id: id}, update, function (err) {
+
+      res.json({
+        success: true,
+        message: "Successfully updated object with id: " + id
       });
 
       dataAccessLayer.disconnect();

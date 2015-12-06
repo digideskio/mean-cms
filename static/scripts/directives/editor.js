@@ -73,7 +73,8 @@ angular.module('meanCmsApp')
 
           if (typeof scope.data === "object"){
 
-            //TODO: implement as editor form
+            scope.values = angular.copy(scope.data);
+
           }
         });
 
@@ -81,8 +82,11 @@ angular.module('meanCmsApp')
 
           //TODO: are you sure dialog?
 
-          scope.values = {};
-
+          if (typeof scope.data === "object"){
+            scope.values = angular.copy(scope.data);
+          } else {
+            scope.values = {};
+          }
         };
 
         scope.save = function(){

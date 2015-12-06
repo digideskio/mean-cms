@@ -20,6 +20,10 @@ angular.module('meanCmsApp', [
         templateUrl : "views/create.html",
         controller : "createCtrl"
       })
+      .when("/objects/:objectName/edit/:id", {
+        templateUrl : "views/edit.html",
+        controller : "editCtrl"
+      })
       .otherwise({
         redirectTo: '/'
       });

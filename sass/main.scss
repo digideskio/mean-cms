@@ -4,7 +4,6 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 @import "compass/css3/box-shadow";
 @import "compass/css3";
 @import url(https://fonts.googleapis.com/css?family=Asap);
-//@import 'sass-bootstrap/lib/bootstrap';
 
 //colours
 $orange: #ff9900;
@@ -12,9 +11,10 @@ $dark-orange: #cc7a00;
 $light-orange: #ffcc80;
 $light-white: #f2f2f2;
 $very-light-white: #F5F5F5;
-$dark-grey: #1a1a1a;
+$dark-grey: #333333;
 $mid-grey: #808080;
 $light-grey: #cccccc;
+$very-light-grey: #e6e6e6;
 $warning-red: #cc3300;
 
 body {
@@ -271,8 +271,95 @@ h1.control-header {
   @include border-radius(3px);
 
   &:hover {
+    cursor: pointer;
     text-decoration: none;
     background-color: $dark-orange;
   }
 }
 
+.orange {
+  color: $orange;
+}
+
+.delete-icon {
+
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: url("../images/delete-icon.png") no-repeat top left;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.edit-icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: url("../images/edit-icon.png") no-repeat top left;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.filter-form {
+
+  label {
+    width: 120px;
+  }
+
+  .delete-icon {
+
+    position: relative;
+    top: 10px;
+    margin-top: -10px;
+    margin-left: 10px;
+  }
+}
+
+.no-results {
+
+  margin-top: 10px;
+
+}
+
+.object-list-table {
+
+  margin-top: 10px;
+  border-top: 1px solid $orange;
+  width: 100%;
+
+  tr {
+
+    th {
+
+      padding: 5px;
+      background-color: $very-light-grey;
+      color: $orange;
+    }
+
+    td {
+
+      border-collapse: collapse;
+      border-top: 1px solid $very-light-grey;
+      border-bottom: 1px solid $very-light-grey;
+      padding: 5px;
+
+      &.edit, &.delete {
+
+        width:52px;
+        max-width: 52px;
+      }
+    }
+
+    &.odd {
+
+      td {
+
+        background-color: $very-light-white;
+      }
+    }
+  }
+}

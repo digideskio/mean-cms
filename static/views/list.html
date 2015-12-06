@@ -1,20 +1,54 @@
 <div class="list-objects">
 
-  <h1 class="control-header">{{objectMetaData.displayName | lowercase}} object instances | <span create-button name="{{objectName}}"></span></h1>
+  <h1 class="control-header">{{objectMetaData.displayName | lowercase}} object instances | <span create-button
+                                                                                                 name="{{objectName}}"></span>
+  </h1>
 
+  <form class="filter-form" ng-if="objects.length > 0">
+    <fieldset>
+      <label class="orange" for="filter">filter object list:</label>
+      <input type="text" id="filter" ng-model="$parent.filter">
 
+      <a class="delete-icon" ng-click="clearFilter()"></a>
+    </fieldset>
+  </form>
 
-  <table class="object-list-table">
+  <div ng-if="objects.length === 0" class="no-results">
+    There are currently no objects for this type
+  </div>
+
+  <table ng-if="objects.length > 0" class="object-list-table">
 
     <thead>
 
-      <th>title</th>
-      <th>description</th>
-      <th>go!</th>
+    <tr>
+
+      <th ng-repeat="item in objectMetaData.table.fields">
+        {{item}}
+      </th>
+      <th></th>
+      <th></th>
+    </tr>
 
     </thead>
 
-  </table>
+    <tbody>
 
+      <tr ng-repeat="object in objects | filter: filter" >
+
+        <td ng-repeat="item in objectMetaData.table.fields">
+          {{$parent.object[item]}}
+        </td>
+
+        <td class="edit">
+          <a class="edit-icon" ng-href="#/objects/{{objectName}}/edit/{{object[objectMetaData.table.idFieldName]}}"></a>
+        </td>
+
+        <td class="delete">
+          <a class="delete-icon" ng-click="delete(object[objectMetaData.table.idFieldName])"></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 

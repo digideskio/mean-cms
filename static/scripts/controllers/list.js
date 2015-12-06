@@ -26,6 +26,21 @@ angular.module('meanCmsApp')
       }
     };
 
+    $scope.clearFilter = function(){
+
+      $scope.filter = "";
+    };
+
+    $scope.delete = function(id){
+
+      var Object = data.getObject($routeParams.objectName);
+
+      Object.delete({id : id}).$promise.then(function(response){
+
+        $scope.listObjects();
+      });
+    };
+
     $scope.init = function(){
 
       $scope.listObjects();

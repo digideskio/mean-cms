@@ -13,7 +13,7 @@ angular.module('meanCmsApp')
 
       getObject : function(objectName){
 
-        var object = $resource("api/objects/" + objectName);
+        var object = $resource("api/objects/" + objectName + "/:id", {id : "@id"}, { update: {method : "PUT", params : {id : "@id"}}});
         return object;
       }
     }

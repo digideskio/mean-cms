@@ -7,14 +7,11 @@ angular.module('meanCmsApp')
 
       responseError : function(response){
 
-        console.log("response", response);
-
         if (response.status === 401){
           $rootScope.isAuthed = false;
-
-          console.log("got here");
-
         }
+
+        //TODO: 500 response error
 
         return response;
       }
