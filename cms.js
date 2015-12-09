@@ -2,6 +2,9 @@ var DataAccessLayer = require("./data");
 var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var bodyParser = require('body-parser');
+var multer = require("multer");
+var upload = multer();
+var fs = require("fs");
 
 module.exports = function (express, app, config) {
 
@@ -202,6 +205,20 @@ module.exports = function (express, app, config) {
 
       dataAccessLayer.disconnect();
 
+    });
+  });
+
+  //file upload handler
+  app.post(baseUrl + "/api/fileupload", upload.single("file"), function (req, res) {
+
+    var saveTo = req.body.saveTo;
+
+    fs.writeFile(saveTo + "/" + req.file.originalname, req.file.buffer, 'binary', function(err){
+
+      res.json({
+        success : true,
+        message : "File saved to disk"
+      });
     });
   });
 };

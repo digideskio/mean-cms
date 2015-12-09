@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('meanCmsApp')
-  .directive('editor', function () {
+  .directive('editor', function ($timeout, data) {
 
     return {
       templateUrl : "scripts/templates/editor.html",
@@ -56,34 +56,98 @@ angular.module('meanCmsApp')
 
             validations = scope.config[key].validation;
 
-            for (var i = 0; i < validations.length; i++){
+            if (typeof validations !== "undefined"){
+              for (var i = 0; i < validations.length; i++){
 
-              isValid = validationFncs[validations[i]](scope.values[key]);
+                isValid = validationFncs[validations[i]](scope.values[key]);
 
-              if (!isValid){
+                if (!isValid){
 
-                invalid[key] = validations[i];
-                break;
+                  invalid[key] = validations[i];
+                  break;
+                }
               }
             }
           }
         };
 
-        scope.$watch("data", function(){
+        scope.$watch(function(){
+
+          return typeof scope.data === "object" && typeof scope.config === "object";
+
+        }, function(){
 
           if (typeof scope.data === "object"){
 
-            scope.values = angular.copy(scope.data);
+            for (var key in scope.config){
 
+              if (scope.config[key].type == "date"){
+
+                scope.values[key] = formatDate(scope.data[key]);
+              } else {
+                scope.values[key] = scope.data[key];
+              }
+            }
+
+            for (var key in scope.data){
+
+              if (!scope.values.hasOwnProperty(key)){
+                scope.values[key] = scope.data[key];
+              }
+            }
           }
         });
+
+        var addLeadingZero = function(day){
+
+          var ret = day;
+
+          if (day < 10){
+            ret = "0" + day;
+          }
+          return ret;
+        }
+
+        var formatDate = function(dateStr){
+
+          var date = new Date(dateStr),
+            newDateStr = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + addLeadingZero(date.getDate());
+
+          return newDateStr;
+        };
+
+        scope.hasImage = function(fieldKey){
+
+          return typeof scope.values[fieldKey] === "string" && scope.values[fieldKey].length > 0 ? true : false;
+        };
+
+        scope.uploadFile = function(fieldKey){
+
+          var file = element.find("#" + fieldKey)[0].files[0],
+            name = file.name;
+
+
+          if (typeof file !== "undefined"){
+            data.uploadFile(file, scope.config[fieldKey].filePath, "image").then(function(response){
+
+              var pathToImage = scope.config[fieldKey].staticPath + "/" + name;
+
+              scope.values[fieldKey] = pathToImage;
+
+            });
+          }
+        };
 
         scope.reset = function(){
 
           //TODO: are you sure dialog?
 
           if (typeof scope.data === "object"){
+
+            //TODO: need copy loop here too.
+
             scope.values = angular.copy(scope.data);
+
           } else {
             scope.values = {};
           }
@@ -96,7 +160,43 @@ angular.module('meanCmsApp')
           if (scope.isValid()){
             scope.$emit("instanceSave", scope.values);
           }
-        }
+        };
+
+        scope.initCodeMirrorEditor = function(){
+
+          scope.codeMirror = {};
+
+          $timeout(function(){
+
+            for (var key in scope.config) {
+
+              if (scope.config[key].type === "html") {
+
+                scope.codeMirror[key] = CodeMirror(document.getElementById("code-mirror-" + key));
+
+                if (typeof scope.values[key] !== "undefined" && scope.values[key].length > 0){
+
+                  scope.codeMirror[key].setValue(scope.values[key]);
+                }
+
+                scope.codeMirror[key].on("change", (function(intKey){
+
+                  return function(instance, changeObj){
+
+                    scope.values[intKey] = instance.getValue();
+                  };
+                }(key)));
+              }
+            }
+          }, 1000);
+        };
+
+        scope.init = function(){
+
+          scope.initCodeMirrorEditor();
+        };
+
+        scope.init();
       }
     }
   });

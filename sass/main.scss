@@ -147,6 +147,44 @@ form {
     padding-left: 10px;
   }
 
+  .image-container {
+    margin: 5px 0px 0px 104px;
+  }
+
+  .code-mirror-label {
+
+    position: absolute;
+    top: 0px;
+  }
+
+  .code-mirror-warning {
+
+    position: absolute;
+    top: 0px;
+
+  }
+
+  .code-mirror-container {
+    display: inline-block;
+    width: 600px;
+    margin-left: 105px;
+
+    .CodeMirror {
+
+      background-color: $light-white;
+      border: 1px solid $dark-orange;
+      @include border-radius(3px);
+    }
+  }
+
+  fieldset {
+    position: relative;
+  }
+
+  input[type='text'], input[type='file'], input[type='date'] {
+    width: 600px;
+  }
+
   label {
     color: $orange;
   }

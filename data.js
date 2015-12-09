@@ -15,7 +15,6 @@ module.exports = function(config){
       try {
 
         modelSchema = require(config.models[modelName].schemaPath);
-
         Model = mongoose.model(modelName, modelSchema);
 
       } catch(e){}

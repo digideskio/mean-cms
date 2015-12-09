@@ -4,7 +4,8 @@
   "dependencies": {
     "express-session": "~1.12.1",
     "cookie-parser": "~1.4.0",
-    "body-parser": "~1.14.1"
+    "body-parser": "~1.14.1",
+    "multer": "~1.1.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
