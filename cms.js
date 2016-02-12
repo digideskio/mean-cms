@@ -215,6 +215,8 @@ module.exports = function (express, app, config) {
 
     fs.writeFile(saveTo + "/" + req.file.originalname, req.file.buffer, 'binary', function(err){
 
+      console.log(err);
+
       res.json({
         success : true,
         message : "File saved to disk"

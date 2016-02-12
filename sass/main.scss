@@ -101,6 +101,11 @@ form {
       color: $light-white;
     }
 
+    .filename {
+
+      display: inline-block;
+    }
+
     input, button {
 
       height: 24px;
@@ -161,7 +166,6 @@ form {
 
     position: absolute;
     top: 0px;
-
   }
 
   .code-mirror-container {

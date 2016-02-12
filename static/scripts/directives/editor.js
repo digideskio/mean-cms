@@ -128,10 +128,10 @@ angular.module('meanCmsApp')
 
 
           if (typeof file !== "undefined"){
+
             data.uploadFile(file, scope.config[fieldKey].filePath, "image").then(function(response){
 
               var pathToImage = scope.config[fieldKey].staticPath + "/" + name;
-
               scope.values[fieldKey] = pathToImage;
 
             });
@@ -140,11 +140,7 @@ angular.module('meanCmsApp')
 
         scope.reset = function(){
 
-          //TODO: are you sure dialog?
-
           if (typeof scope.data === "object"){
-
-            //TODO: need copy loop here too.
 
             scope.values = angular.copy(scope.data);
 

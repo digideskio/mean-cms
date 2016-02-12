@@ -139,6 +139,10 @@ form fieldset label {
   color: #f2f2f2;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003104}}
+form fieldset .filename {
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003109}}
 form fieldset input, form fieldset button {
   height: 24px;
   background-color: #f2f2f2;
@@ -152,55 +156,55 @@ form fieldset input, form fieldset button {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003122}}
 form fieldset input[type='submit'], form fieldset button[type='submit'] {
   width: auto;
   height: 32px;
   padding: 0px 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003127}}
 form fieldset input[type='submit']:hover, form fieldset button[type='submit']:hover {
   cursor: pointer;
   color: #f2f2f2;
   background-color: #cc7a00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003137}}
 form .warning {
   color: #cc3300;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003144}}
 .editor-form .field {
   margin-bottom: 10px;
   padding: 10px;
   background-color: #F5F5F5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003145}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003150}}
 .editor-form .warning {
   display: inline-block;
   padding-left: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003150}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003155}}
 .editor-form .image-container {
   margin: 5px 0px 0px 104px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003159}}
 .editor-form .code-mirror-label {
   position: absolute;
   top: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003160}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003165}}
 .editor-form .code-mirror-warning {
   position: absolute;
   top: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003167}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003171}}
 .editor-form .code-mirror-container {
   display: inline-block;
   width: 600px;
   margin-left: 105px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003176}}
 .editor-form .code-mirror-container .CodeMirror {
   background-color: #f2f2f2;
   border: 1px solid #cc7a00;
@@ -208,19 +212,19 @@ form .warning {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003180}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003184}}
 .editor-form fieldset {
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003188}}
 .editor-form input[type='text'], .editor-form input[type='file'], .editor-form input[type='date'] {
   width: 600px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003188}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003192}}
 .editor-form label {
   color: #ff9900;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003192}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003196}}
 .editor-form button, .editor-form input[type="submit"] {
   font-size: 1em;
   height: 32px;
@@ -232,7 +236,7 @@ form .warning {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003203}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003207}}
 .editor-form button:hover, .editor-form input[type="submit"]:hover {
   cursor: pointer;
   color: #f2f2f2;
@@ -240,7 +244,7 @@ form .warning {
   border-color: #cc7a00;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003212}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003216}}
 .loading {
   position: absolute;
   top: 0px;
@@ -249,7 +253,7 @@ form .warning {
   z-index: 1000;
   background-color: #f2f2f2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003221}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003225}}
 .loading img {
   display: block;
   width: 106px;
@@ -261,24 +265,24 @@ form .warning {
   margin: -50px 0px 0px -50px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003237}}
 .login-form {
   padding-top: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003237}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003241}}
 .login-form label {
   width: 80px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003242}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003246}}
 .login-form input[type="submit"] {
   margin-left: 84px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003247}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003251}}
 .login-form .warning {
   padding-bottom: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003258}}
 .login-container .login-box {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -296,26 +300,26 @@ form .warning {
   -webkit-box-shadow: 1px 1px 10px 2px #cccccc;
   box-shadow: 1px 1px 10px 2px #cccccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003270}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003274}}
 .login-container .login-box h1 {
   font-family: 'Asap', sans-serif;
   color: #f2f2f2;
   font-size: 2em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003275}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003279}}
 .login-container .login-box h1 img {
   margin: 0px 5px;
   display: inline-block;
   width: 30px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003285}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003289}}
 .view {
   margin-left: 300px;
   padding: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003290}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003294}}
 h1.control-header {
   color: #ff9900;
   font-family: 'Asap', sans-serif;
@@ -325,7 +329,7 @@ h1.control-header {
   border-bottom: 1px solid #ff9900;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003300}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003304}}
 .button {
   display: inline-block;
   background-color: #ff9900;
@@ -338,47 +342,47 @@ h1.control-header {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003315}}
 .button:hover {
   cursor: pointer;
   text-decoration: none;
   background-color: #cc7a00;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003322}}
 .orange {
   color: #ff9900;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003326}}
 .delete-icon {
   display: inline-block;
   width: 32px;
   height: 32px;
   background: url("../images/delete-icon.png") no-repeat top left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003333}}
 .delete-icon:hover {
   cursor: pointer;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003338}}
 .edit-icon {
   display: inline-block;
   width: 32px;
   height: 32px;
   background: url("../images/edit-icon.png") no-repeat top left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003344}}
 .edit-icon:hover {
   cursor: pointer;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003351}}
 .filter-form label {
   width: 120px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003355}}
 .filter-form .delete-icon {
   position: relative;
   top: 10px;
@@ -386,36 +390,36 @@ h1.control-header {
   margin-left: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003364}}
 .no-results {
   margin-top: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003370}}
 .object-list-table {
   margin-top: 10px;
   border-top: 1px solid #ff9900;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003378}}
 .object-list-table tr th {
   padding: 5px;
   background-color: #e6e6e6;
   color: #ff9900;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003385}}
 .object-list-table tr td {
   border-collapse: collapse;
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
   padding: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003392}}
 .object-list-table tr td.edit, .object-list-table tr td.delete {
   width: 52px;
   max-width: 52px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/david\/www\/reefknot\/cms\/sass\/main\.scss}line{font-family:\00003401}}
 .object-list-table tr.odd td {
   background-color: #F5F5F5;
 }

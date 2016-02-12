@@ -14,7 +14,6 @@ angular.module('meanCmsApp')
       objectsRes.get().$promise.then(function (data) {
 
         $scope.objectsMetaData = data;
-
         $scope.$broadcast("objectMetaDataLoaded", $scope.objectsMetaData);
       });
     };
